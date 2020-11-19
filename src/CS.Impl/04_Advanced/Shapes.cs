@@ -10,61 +10,68 @@ namespace CS.Impl._04_Advanced
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return this.GetType().Name;
         }
     }
 
     public class Circle : Shape
     {
+        private double radius;
         public Circle(double radius)
         {
-            throw new NotImplementedException();
+            this.radius = radius;
         }
 
         public override double GetArea()
         {
-            throw new NotImplementedException();
+            return Math.Round(Math.PI * Math.Pow(radius, 2));
         }
 
         public override double GetPerimeter()
         {
-            throw new NotImplementedException();
+            return Math.Round(2 * Math.PI * radius);
         }
     }
 
     public class Rectangle : Shape
     {
+        private double length;
+        private double width;
+
         public Rectangle(double length, double width)
         {
-            throw new NotImplementedException();
+            this.length = length;
+            this.width = width;
         }
 
         public override double GetArea()
         {
-            throw new NotImplementedException();
+            return length * width;
         }
 
         public override double GetPerimeter()
         {
-            throw new NotImplementedException();
+            return 2 * length + 2 * width;
         }
     }
 
     public class Square : Shape
     {
+        private double sideLength;
+
         public Square(double sideLength)
         {
-            throw new NotImplementedException();
+            this.sideLength = sideLength;
         }
 
         public override double GetArea()
         {
-            throw new NotImplementedException();
+            return sideLength*sideLength;
         }
 
         public override double GetPerimeter()
         {
-            throw new NotImplementedException();
+            return sideLength*4;
         }
     }
 }
