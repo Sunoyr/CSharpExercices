@@ -7,17 +7,24 @@ namespace CS.Impl._01_Basic
     {
         public int Sum(int a, int b)
         {
-            throw new NotImplementedException();
+            return a + b;
         }
 
         public int Divide(int a, int b)
         {
-            throw new NotImplementedException();
+            return a / b;
         }
 
         public int SumTable(IEnumerable<int> integersTable)
         {
-            throw new NotImplementedException();
+            int result = 0;
+
+            foreach(var nb in integersTable)
+            {
+                result += nb;
+            }
+
+            return result;
         }
     }
 }

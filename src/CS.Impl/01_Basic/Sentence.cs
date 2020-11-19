@@ -6,7 +6,9 @@ namespace CS.Impl._01_Basic
     {
         public string Reverse(string sentence)
         {
-            throw new NotImplementedException();
+            string[] words = sentence.Split();
+            Array.Reverse(words);
+            return String.Join(" ", words);            
         }
     }
 }
