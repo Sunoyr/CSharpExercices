@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace CS.Impl._04_Advanced
 {
@@ -7,7 +6,30 @@ namespace CS.Impl._04_Advanced
     {
         public TravelRoadmap BuildTravelRoadmap(City initial, City destination)
         {
-            throw new NotImplementedException();
+            var distanceHelper = new DistanceHelper();
+
+            var distance = distanceHelper.GetDistance(initial, destination);
+
+            switch (distance)
+            {
+                case Distance.Short:
+                    return new TravelRoadmap
+                    {
+                        Modes = new List<TransportMode> { TransportMode.Foot, TransportMode.Car, TransportMode.Train }
+                    };
+                case Distance.Medium:
+                    return new TravelRoadmap
+                    {
+                        Modes = new List<TransportMode> { TransportMode.Car, TransportMode.Train, TransportMode.Plane }
+                    };
+                case Distance.Long:
+                    return new TravelRoadmap
+                    {
+                        Modes = new List<TransportMode> { TransportMode.Boat, TransportMode.Plane }
+                    };
+            }
+
+            return null;
         }
     }
 
@@ -36,7 +58,18 @@ namespace CS.Impl._04_Advanced
     {
         public Distance GetDistance(City initial, City destination)
         {
-            throw new NotImplementedException();
+            if (initial == destination)
+            {
+                return Distance.Short;
+            }
+
+            if (initial == City.Barcelona && destination == City.London ||
+                initial == City.London && destination == City.Barcelona)
+            {
+                return Distance.Medium;
+            }
+
+            return Distance.Long;
         }
     }
 

@@ -15,7 +15,7 @@ namespace CS.Tests._04_Advanced
 
             // Act
             var travelRoadmap = subject.BuildTravelRoadmap(City.Barcelona, City.Barcelona);
-            
+
             // Assert
             Assert.IsNotNull(travelRoadmap);
             Assert.IsTrue(travelRoadmap.Modes.Contains(TransportMode.Foot));
